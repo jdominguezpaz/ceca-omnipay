@@ -1,40 +1,18 @@
-Omnipay: Ceca
-===============
+# ceca-omnipay
 
-**Ceca NON-OFFICIAL driver for the Omnipay PHP payment processing library**
+Pasarela [Omnipay](https://omnipay.thephpleague.com/) para el TPV virtual de CECA.
 
-[Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements RedSys (formerly Sermepa) support for Omnipay.
+## Versiones
 
-Installation
-------------
+| Rama / versión | Omnipay | PHP   | Estado          |
+|----------------|---------|-------|-----------------|
+| `2.x` (2.0.x)  | 2.x     | 7.2+  | estable         |
+| `3.x`          | 3.x     | 8+    | en preparación  |
 
-Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply add it to your `composer.json` file:
+`master` es la punta de desarrollo y no lleva tags.
 
-```json
-{
-    "repositories": [
-        {
-            "url": "https://github.com/jdominguezpaz/ceca-omnipay.git",
-            "type": "git",
-            "reference": "master"
-        }
-    ],
-}
+## Instalación
+
+```bash
+composer require jdominguezpaz/ceca-omnipay:^2.0
 ```
-
-And run composer to update your dependencies:
-
-    $ curl -s http://getcomposer.org/installer | php
-    $ php composer.phar update
-
-Basic Usage
------------
-
-For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay)
-repository.
-
-Remember
---------
-
-This is a non official ommipay plugin based on jsampedro77 superb work [Omnipay RedSys](https://github.com/jsampedro77/sermepa-omnipay/blob/master/README.md)
