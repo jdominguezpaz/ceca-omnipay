@@ -95,11 +95,6 @@ class Gateway extends AbstractGateway
         return $this->createRequest('\Omnipay\Ceca\Message\PurchaseRequest', $parameters);
     }
     
-    public function completePurchase(array $parameters = array())
-    {
-        return $this->createRequest('\Omnipay\Ceca\Message\CompletePurchaseRequest', $parameters);
-    }
-
     public function refund(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\Ceca\Message\RefundRequest', $parameters);

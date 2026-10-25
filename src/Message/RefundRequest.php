@@ -3,7 +3,6 @@
 namespace Omnipay\Ceca\Message;
 
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\Ceca\Encryptor\Encryptor;
 
 /**
  * Ceca (Redsys) Purchase Request

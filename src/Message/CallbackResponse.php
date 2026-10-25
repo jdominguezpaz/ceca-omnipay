@@ -2,7 +2,6 @@
 
 namespace Omnipay\Ceca\Message;
 
-use Omnipay\Ceca\Encryptor\Encryptor;
 use Symfony\Component\HttpFoundation\Request;
 use Omnipay\Ceca\Exception\BadSignatureException;
 use Omnipay\Ceca\Exception\CallbackException;
