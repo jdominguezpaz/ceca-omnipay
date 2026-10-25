@@ -16,9 +16,10 @@ class CallbackResponse
     private $request;
     private $merchantKey;
 
-    public function __construct(Request $request, $merchantKey)
+    public function __construct(Request $request, $merchantKey, $hash)
     {
         $this->request = $request;
+        $this->hash = $hash;
         $this->merchantKey = $merchantKey;
         $this->error = '';
     }
@@ -65,7 +66,12 @@ class CallbackResponse
             . $data['Exponente'] 
             . $data['Referencia'];
 
-        $signature = strtolower(sha1($signature));
+        if ($this->hash == "SHA2") {
+            $signature = strtolower(hash('sha256',  $signature));
+        }
+        else {
+            $signature = strtolower(sha1($signature));
+        }        
 
         return $signature == $expectedSignature;
     }

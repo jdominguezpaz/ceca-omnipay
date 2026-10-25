@@ -62,22 +62,33 @@ class Gateway extends AbstractGateway
     {
         return $this->setParameter('Idioma', $Idioma);
     }
-    //Set Idioma - required
     public function setClaveEncriptacion($clave_encriptacion)
     {
         return $this->setParameter('clave_encriptacion', $clave_encriptacion);
     }
-    //Set Idioma - required
     public function setUrlOk($url)
     {
         return $this->setParameter('URL_OK', $url);
     }
-    //Set Idioma - required
     public function setUrlNoOk($url)
     {
         return $this->setParameter('URL_NOK', $url);
     }
-  
+
+    public function setCifrado($Cifrado)
+    {
+        return $this->setParameter('Cifrado', $Cifrado);
+    }
+    public function setReferencia($Referencia)
+    {
+        return $this->setParameter('Referencia', $Referencia);
+    }   
+    public function setPagina($Pagina)
+    {
+        return $this->setParameter('Pagina', $Pagina);
+    }
+
+
 
     public function purchase(array $parameters = array())
     {
@@ -89,6 +100,10 @@ class Gateway extends AbstractGateway
         return $this->createRequest('\Omnipay\Ceca\Message\CompletePurchaseRequest', $parameters);
     }
 
+    public function refund(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\Ceca\Message\RefundRequest', $parameters);
+    }
 
     /**
      *
@@ -97,7 +112,7 @@ class Gateway extends AbstractGateway
      */
     public function checkCallbackResponse(Request $request)
     {
-        $response = new CallbackResponse($request, $this->getParameter('clave_encriptacion'));
+        $response = new CallbackResponse($request, $this->getParameter('clave_encriptacion'),  $this->getParameter('Cifrado'));
 
         return $response->isSuccessful();
     }
