@@ -5,7 +5,7 @@ namespace Omnipay\Ceca\Message;
 use Omnipay\Common\Message\AbstractResponse;
 
 /**
- * Ceca (Redsys) Refund Response
+ * Ceca Refund Response
  */
 class RefundResponse extends AbstractResponse
 {

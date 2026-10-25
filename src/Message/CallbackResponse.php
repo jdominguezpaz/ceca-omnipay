@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Omnipay\Ceca\Exception\BadSignatureException;
 
 /**
- * Ceca (Redsys)  Callback Response
+ * Ceca Callback Response
  */
 class CallbackResponse
 {

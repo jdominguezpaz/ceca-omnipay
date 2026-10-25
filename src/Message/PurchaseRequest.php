@@ -5,7 +5,7 @@ namespace Omnipay\Ceca\Message;
 use Omnipay\Common\Message\AbstractRequest;
 
 /**
- * Ceca (Redsys) Purchase Request
+ * Ceca Purchase Request
  *
  * @author Javier Sampedro <jsampedro77@gmail.com>
  * @author NitsNets Studio <github@nitsnets.com>

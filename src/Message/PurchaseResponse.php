@@ -6,7 +6,7 @@ use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RedirectResponseInterface;
 
 /**
- * Ceca (Redsys) Purchase Response
+ * Ceca Purchase Response
  */
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {

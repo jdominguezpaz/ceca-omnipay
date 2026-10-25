@@ -7,7 +7,7 @@ use Omnipay\Common\AbstractGateway;
 use Omnipay\Ceca\Message\CallbackResponse;
 
 /**
- * Ceca (Redsys) Gateway
+ * Ceca Gateway
  *
  * @author Javier Sampedro <jsampedro77@gmail.com>
  * @author NitsNets Studio <github@nitsnets.com>
