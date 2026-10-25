@@ -102,8 +102,6 @@ class PurchaseRequest extends AbstractRequest
         $data['Idioma'] = $this->getParameter('Idioma');
         $data['Pago_soportado'] = $this->getParameter('Pago_soportado');
         $data['Descripcion'] = $this->getParameter('Descripcion');
-        // debug($data);
-        // die();
         $data['Firma'] = $this->generateSignature($data, $clave_encriptacion);
 
         return $data;

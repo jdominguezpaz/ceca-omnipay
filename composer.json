@@ -13,6 +13,7 @@
     "require": {
         "php": ">=7.2",
         "ext-hash": "*",
+        "ext-simplexml": "*",
         "omnipay/common": "2.*"
     },
     "autoload": {

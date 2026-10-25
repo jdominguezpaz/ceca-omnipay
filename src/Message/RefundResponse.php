@@ -11,34 +11,14 @@ use Omnipay\Common\Message\RedirectResponseInterface;
 class RefundResponse extends AbstractResponse //implements RedirectResponseInterface
 {
 
+    /**
+     * La anulación se acepta si el XML trae el atributo valor="OK" (con
+     * OPERACION tipo="400"); un atributo Valor="" (con RESULTADOOK, ERROR_DESC
+     * y ERROR_MAS_DATOS) es un rechazo.
+     */
     public function isSuccessful()
     {
-        // object(SimpleXMLElement) {
-        //     @attributes => [
-        //         'valor' => 'OK',
-        //         'numeroOperacion' => '41',
-        //         'fecha' => '04/01/2019 22:15:02 '
-        //     ]
-        //     OPERACION => object(SimpleXMLElement) {
-        //         @attributes => [
-        //             'tipo' => '400'
-        //         ]
-        //         importe => '7,70 '
-        //     }
-        // }
-
-
-        // object(SimpleXMLElement) {
-        //     @attributes => [
-        //         'Valor' => ''
-        //     ]
-        //     RESULTADOOK => 'false'
-        //     ERROR_DESC => 'No existe registro en la tabla de mensajes.'
-        //     ERROR_MAS_DATOS => 'id_proceso:2019010422153643700'
-        // }
-        
         $data =  (array)$this->data;
-        \Cake\Log\Log::info($data, 'debug');           
 
         if (isset($data['@attributes']['Valor']) and $data['@attributes']['Valor'] === '') {
             return false;
